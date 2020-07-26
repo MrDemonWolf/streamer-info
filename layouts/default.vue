@@ -5,7 +5,7 @@
         <div class="flex items-center flex-shrink-0 text-white mr-6">
           <logo width="40" height="40" />
           <span class="font-semibold text-xl tracking-tight"
-            >User Information</span
+            >Stremaer Information</span
           >
         </div>
         <div class="block lg:hidden">
@@ -100,8 +100,8 @@ export default {
         fullPage: true,
         color: '#007bff',
         bgColor: '#ffffff',
-        height: 64,
-        width: 64,
+        height: 100,
+        width: 100,
       },
     }
   },
