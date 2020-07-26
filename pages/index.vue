@@ -1,8 +1,5 @@
 <template>
-  <div
-    v-if="$auth.loggedIn"
-    class="m-10 max-w-md mx-auto g-white shadow-lg rounded-lg overflow-hidden"
-  >
+  <div v-if="$auth.loggedIn">
     <StreamerInfomation
       :id="$auth.user.data[0].id"
       :profileimage="$auth.user.data[0].profile_image_url"
