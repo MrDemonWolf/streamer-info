@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="$auth.user"
+    v-if="$auth.loggedIn"
     class="m-10 max-w-md mx-auto g-white shadow-lg rounded-lg overflow-hidden"
   >
     <img
@@ -47,15 +47,16 @@
 <script>
 export default {
   async asyncData({ $axios, $auth, store }) {
-    const token = $auth.$storage._state['_token.twitch'] // eslint-disable-next-line no-console
-    const twitchFollowers = await $axios.get(
-      `https://api.twitch.tv/helix/users/follows?to_id=${$auth.user.data[0].id}`,
-      {
-        headers: { Authorization: `${token}` },
-      }
-    )
-    // const industries = industriesRes.data.industries
-    return { twitchFollowers }
+    if ($auth.loggedIn) {
+      const token = $auth.$storage._state['_token.twitch'] // eslint-disable-next-line no-console
+      const twitchFollowers = await $axios.get(
+        `https://api.twitch.tv/helix/users/follows?to_id=${$auth.user.data[0].id}`,
+        {
+          headers: { Authorization: `${token}` },
+        }
+      )
+      return { twitchFollowers }
+    }
   },
 }
 </script>

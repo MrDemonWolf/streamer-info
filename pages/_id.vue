@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="$auth.user"
+    v-if="$auth.loggedIn"
     class="m-10 max-w-md mx-auto g-white shadow-lg rounded-lg overflow-hidden"
   >
     <img
@@ -46,36 +46,38 @@
 <script>
 export default {
   async asyncData({ params, error, $axios, $auth, store }) {
-    const token = $auth.$storage._state['_token.twitch']
-    let twitchUser = null
-    if (params.id.match(/^[0-9]+$/)) {
-      twitchUser = await $axios.get(
-        `https://api.twitch.tv/helix/users/?id=${params.id}`,
-        {
-          headers: { Authorization: `${token}` },
-        }
-      )
-    } else {
-      twitchUser = await $axios.get(
-        `https://api.twitch.tv/helix/users/?login=${params.id}`,
-        {
-          headers: { Authorization: `${token}` },
-        }
-      )
-    }
-    if (!twitchUser) {
-      error({
-        statusCode: 404,
-        message: 'There is no Twitch User with the ID you sent.',
-      })
-    }
-    const twitchFollowers = await $axios.get(
-      `https://api.twitch.tv/helix/users/follows?to_id=${twitchUser.data.data[0].id}`,
-      {
-        headers: { Authorization: `${token}` },
+    if ($auth.loggedIn) {
+      const token = $auth.$storage._state['_token.twitch']
+      let twitchUser = null
+      if (params.id.match(/^[0-9]+$/)) {
+        twitchUser = await $axios.get(
+          `https://api.twitch.tv/helix/users/?id=${params.id}`,
+          {
+            headers: { Authorization: `${token}` },
+          }
+        )
+      } else {
+        twitchUser = await $axios.get(
+          `https://api.twitch.tv/helix/users/?login=${params.id}`,
+          {
+            headers: { Authorization: `${token}` },
+          }
+        )
       }
-    )
-    return { twitchUser, twitchFollowers }
+      if (!twitchUser) {
+        error({
+          statusCode: 404,
+          message: 'There is no Twitch User with the ID you sent.',
+        })
+      }
+      const twitchFollowers = await $axios.get(
+        `https://api.twitch.tv/helix/users/follows?to_id=${twitchUser.data.data[0].id}`,
+        {
+          headers: { Authorization: `${token}` },
+        }
+      )
+      return { twitchUser, twitchFollowers }
+    }
   },
 }
 </script>

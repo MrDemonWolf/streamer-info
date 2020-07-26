@@ -1,5 +1,5 @@
 {
-  "name": "twitch-user-information",
+  "name": "streamerinfo",
   "version": "1.0.0",
   "description": "Basic NuxtJS App which allows users to get more information about them and others as well. All using the Twitch API.",
   "author": "Nathan Henniges",

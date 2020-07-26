@@ -24,18 +24,18 @@
         </div>
         <div>
           <button
-            v-if="!$auth.user"
-            class="inline-block text-sm px-4 py-2 leading-none border rounded text-white bg-purple-700 transition ease-in-out duration-600 hover:border-white hover:text-white hover:bg-transparent mt-4 lg:mt-0"
-            @click.prevent="loginWithTwitch"
-          >
-            <fa :icon="['fab', 'twitch']" /> Login With Twitch
-          </button>
-          <button
-            v-if="$auth.user"
+            v-if="$auth.loggedIn"
             class="inline-block text-sm px-4 py-2 leading-none border rounded text-white bg-purple-700 transition ease-in-out duration-600 hover:border-white hover:text-white hover:bg-transparent mt-4 lg:mt-0"
             @click.prevent="logout"
           >
             <fa :icon="['fas', 'lock']" /> Logout
+          </button>
+          <button
+            v-else
+            class="inline-block text-sm px-4 py-2 leading-none border rounded text-white bg-purple-700 transition ease-in-out duration-600 hover:border-white hover:text-white hover:bg-transparent mt-4 lg:mt-0"
+            @click.prevent="loginWithTwitch"
+          >
+            <fa :icon="['fab', 'twitch']" /> Login With Twitch
           </button>
         </div>
       </nav>
