@@ -65,11 +65,11 @@ export default {
       required: true,
     },
     followercount: {
-      type: String,
+      type: Number,
       required: true,
     },
     viewcount: {
-      type: String,
+      type: Number,
       required: true,
     },
     id: {

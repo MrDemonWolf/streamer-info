@@ -1,40 +1,31 @@
 <template>
   <div
-    v-if="$auth.loggedIn"
-    class="m-10 max-w-md mx-auto g-white shadow-lg rounded-lg overflow-hidden"
+    v-if="
+      $auth.loggedIn &&
+      (this.$route.params.id === $auth.user.data[0].id ||
+        this.$route.params.id.toLowerCase() === $auth.user.data[0].login)
+    "
   >
-    <img
-      :src="`${twitchUser.data.data[0].profile_image_url}`"
-      class="w-full h-56 object-cover object-center"
-      alt="avatar"
+    <StreamerInfomation
+      :id="$auth.user.data[0].id"
+      :profileimage="$auth.user.data[0].profile_image_url"
+      :displayname="$auth.user.data[0].display_name"
+      :bio="$auth.user.data[0].description"
+      :followercount="twitchFollowers.data.total"
+      :viewcount="$auth.user.data[0].view_count"
+      :email="$auth.user.data[0].email"
     />
-    <div class="flex items-center px-6 py-3 bg-gray-900">
-      <h1 class="mx-3 text-white font-semibold text-2xl">
-        {{ twitchUser.data.data[0].display_name }}
-      </h1>
-    </div>
-    <div class="py-4 px-6">
-      <p class="py-2 text-lg text-gray-700">
-        {{ twitchUser.data.data[0].description }}
-      </p>
-      <div class="flex items-center mt-4 text-gray-700">
-        <fa :icon="['fas', 'heart']" />
-        <h1 class="px-2 text-sm">{{ twitchFollowers.data.total }}</h1>
-      </div>
-      <div class="flex items-center mt-4 text-gray-700">
-        <fa :icon="['fas', 'eye']" />
-
-        <h1 class="px-2 text-sm">{{ twitchUser.data.data[0].view_count }}</h1>
-      </div>
-      <div class="flex items-center mt-4 text-gray-700">
-        <fa :icon="['fas', 'id-card']" />
-        <h1 class="px-2 text-sm">{{ twitchUser.data.data[0].id }}</h1>
-      </div>
-      <div class="flex items-center mt-4 text-gray-700">
-        <fa :icon="['fas', 'envelope']" />
-        <h1 class="px-2 text-sm">{{ twitchUser.data.data[0].email }}</h1>
-      </div>
-    </div>
+  </div>
+  <div v-else-if="$auth.loggedIn">
+    <StreamerInfomation
+      :id="twitchUser.data.data[0].id"
+      :profileimage="twitchUser.data.data[0].profile_image_url"
+      :displayname="twitchUser.data.data[0].display_name"
+      :bio="twitchUser.data.data[0].description"
+      :followercount="twitchFollowers.data.total"
+      :viewcount="twitchUser.data.data[0].view_count"
+      :email="'false'"
+    />
   </div>
   <div
     v-else
@@ -44,7 +35,11 @@
   </div>
 </template>
 <script>
+import StreamerInfomation from '~/components/StreamerInfomation.vue'
 export default {
+  components: {
+    StreamerInfomation,
+  },
   async asyncData({ params, error, $axios, $auth, store }) {
     if ($auth.loggedIn) {
       const token = $auth.$storage._state['_token.twitch']
