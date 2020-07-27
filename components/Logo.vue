@@ -236,7 +236,7 @@
   </svg>
 </template>
 <style>
-.NuxtLogo {
+.MrDemonWolfLogo {
   animation: 1s appear;
   margin: auto;
 }

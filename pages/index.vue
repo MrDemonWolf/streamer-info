@@ -16,11 +16,11 @@
 </template>
 <script>
 import StreamerInfomation from '~/components/StreamerInfomation.vue'
-
 export default {
   components: {
     StreamerInfomation,
   },
+
   async asyncData({ $axios, $auth, store }) {
     if ($auth.loggedIn) {
       const token = $auth.$storage._state['_token.twitch']

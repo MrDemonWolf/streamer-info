@@ -10,6 +10,16 @@
     <div class="flex items-center px-6 py-3 bg-gray-900">
       <h1 class="mx-3 text-white font-semibold text-2xl">
         {{ displayname }}
+        <Verified
+          v-if="broadcastertype === 'partner'"
+          :size="'1.75rem'"
+          class="inline-block"
+        />
+        <Developer
+          v-if="id === '45335452'"
+          :size="'1.75rem'"
+          class="inline-block"
+        />
       </h1>
     </div>
     <div class="py-4 px-6">
@@ -49,8 +59,12 @@
 </template>
 
 <script>
+import Verified from '~/components/Verified.vue'
+import Developer from '~/components/Developer.vue'
+
 export default {
   name: 'StreamerInfomation',
+  components: { Verified, Developer },
   props: {
     profileimage: {
       type: String,
@@ -77,6 +91,11 @@ export default {
       required: true,
     },
     email: {
+      type: String,
+      default: 'false',
+      required: false,
+    },
+    broadcastertype: {
       type: String,
       default: 'false',
       required: false,

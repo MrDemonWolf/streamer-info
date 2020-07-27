@@ -14,6 +14,7 @@
       :followercount="twitchFollowers.data.total"
       :viewcount="$auth.user.data[0].view_count"
       :email="$auth.user.data[0].email"
+      :broadcastertype="$auth.user.data[0].broadcaster_type"
     />
   </div>
   <div v-else-if="$auth.loggedIn">
@@ -25,6 +26,7 @@
       :followercount="twitchFollowers.data.total"
       :viewcount="twitchUser.data.data[0].view_count"
       :email="'false'"
+      :broadcastertype="twitchUser.data.data[0].broadcaster_type"
     />
   </div>
   <div
@@ -36,6 +38,7 @@
 </template>
 <script>
 import StreamerInfomation from '~/components/StreamerInfomation.vue'
+
 export default {
   components: {
     StreamerInfomation,
@@ -60,7 +63,7 @@ export default {
         )
       }
       if (!twitchUser) {
-        error({
+        return error({
           statusCode: 404,
           message: 'There is no Twitch User with the ID you sent.',
         })
