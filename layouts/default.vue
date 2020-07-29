@@ -80,6 +80,7 @@
           <a
             v-else
             class="block text-md px-4 py-2 rounded text-blue-700 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0"
+            @click.prevent="loginWithTwitch"
             >Sign in</a
           >
         </div>
