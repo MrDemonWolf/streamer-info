@@ -14,29 +14,29 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
-    "@fortawesome/free-brands-svg-icons": "^5.13.1",
-    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.12.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
-    "@nuxtjs/tailwindcss": "^2.0.0",
-    "nuxt": "^2.13.3",
+    "@nuxtjs/tailwindcss": "^2.1.1",
+    "nuxt": "^2.14.0",
     "nuxt-fontawesome": "^0.4.0",
     "vue-loading-overlay": "^3.3.2"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^3.0.0",
+    "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.4.0",
+    "eslint": "^7.5.0",
     "eslint-plugin-nuxt": ">=1.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.0.5",
     "@vue/test-utils": "^1.0.3",
-    "babel-jest": "^26.1.0",
-    "jest": "^26.1.0",
+    "babel-jest": "^26.2.1",
+    "jest": "^26.2.1",
     "vue-jest": "^4.0.0-0"
   }
 }
