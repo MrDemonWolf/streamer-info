@@ -13,21 +13,17 @@
     "test": "jest"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.12.0",
-    "@nuxtjs/color-mode": "^1.0.3",
     "@nuxtjs/dotenv": "^1.4.1",
-    "@nuxtjs/fontawesome": "^1.1.2",
-    "@nuxtjs/google-fonts": "^1.0.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@nuxtjs/tailwindcss": "^2.1.1",
-    "babel-core": "^6.26.3",
     "nuxt": "^2.14.0",
     "nuxt-fontawesome": "^0.4.0",
-    "tailwindcss-dark-mode": "^1.1.6",
-    "vue-loading-overlay": "^3.3.2",
-    "@fortawesome/free-brands-svg-icons": "^5.14.0",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0"
+    "vue-loading-overlay": "^3.3.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
