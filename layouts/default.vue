@@ -30,7 +30,7 @@
         <!-- This is an example component -->
 
         <div class="flex">
-          <div class="relative text-gray-600" v-if="$auth.loggedIn">
+          <div v-if="$auth.loggedIn" class="relative text-gray-600">
             <input
               class="border-2 border-gray-300 bg-white h-10 pl-2 pr-8 rounded-lg text-sm focus:outline-none"
               type="search"
@@ -66,8 +66,8 @@
           </a>
 
           <a
-            class="hover:bg-white hover:text-black bg-purple-700 text-white font-bold py-2 px-4 shadow-lg uppercase tracking-wider"
             v-else
+            class="hover:bg-white hover:text-black bg-purple-700 text-white font-bold py-2 px-4 shadow-lg uppercase tracking-wider"
             @click.prevent="loginWithTwitch"
           >
             Login With Twitch <fa :icon="['fab', 'twitch']" />
@@ -100,7 +100,7 @@
           </p>
           <span
             class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start"
-            >this site is not affiliated with twitch™ or any of it's panthers.
+            >this site is not affiliated with twitch™ or any of it's parthers.
           </span>
         </div>
       </footer>
