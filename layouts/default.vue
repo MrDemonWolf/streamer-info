@@ -100,7 +100,7 @@
           </p>
           <span
             class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start"
-            >this site is not affiliated with twitch™ or any of it's panthers.
+            >this site is not affiliated with twitch™ or any of it's partners.
           </span>
         </div>
       </footer>
