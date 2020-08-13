@@ -1,6 +1,6 @@
 <template>
   <div>
-    <body class="flex flex-col min-h-screen">
+    <body class="flex flex-col min-h-screen dark:black">
       <nav
         class="flex items-center lg:justify-between justify-center flex-wrap bg-white py-4 lg:px-12 shadow border-solid border-t-2 border-blue-700"
       >
