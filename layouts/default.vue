@@ -1,6 +1,6 @@
 <template>
   <div>
-    <body class="flex flex-col min-h-screen dark:bg-blue-200">
+    <body class="flex flex-col min-h-screen">
       <nav
         class="flex items-center lg:justify-between justify-center flex-wrap bg-white py-4 lg:px-12 shadow border-solid border-t-2 border-blue-700"
       >
@@ -15,8 +15,22 @@
           </div>
         </div>
 
+        <!-- <div
+          class="menu w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8"
+        >
+          <div class="text-md font-bold text-blue-700 lg:flex-grow">
+            <a
+              href="#responsive-header"
+              class="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2"
+            >
+              Menu 1
+            </a>
+          </div>
+        </div> -->
+        <!-- This is an example component -->
+
         <div class="flex">
-          <div v-if="$auth.loggedIn" class="relative text-gray-600">
+          <div class="relative text-gray-600" v-if="$auth.loggedIn">
             <input
               class="border-2 border-gray-300 bg-white h-10 pl-2 pr-8 rounded-lg text-sm focus:outline-none"
               type="search"
@@ -52,8 +66,8 @@
           </a>
 
           <a
-            v-else
             class="hover:bg-white hover:text-black bg-purple-700 text-white font-bold py-2 px-4 shadow-lg uppercase tracking-wider"
+            v-else
             @click.prevent="loginWithTwitch"
           >
             Login With Twitch <fa :icon="['fab', 'twitch']" />
@@ -89,7 +103,6 @@
             >this site is not affiliated with twitch™ or any of it's partners.
           </span>
         </div>
-        <h1>Color mode: {{ $colorMode.value }}</h1>
       </footer>
     </body>
   </div>
