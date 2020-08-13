@@ -70,12 +70,6 @@
         :is-full-page="loader.fullPage"
       />
       <nuxt class="flex-grow" />
-      <ColorScheme placeholder="..." tag="span">
-        Color mode: <b>{{ $colorMode.preference }}</b>
-        <span v-if="$colorMode.preference === 'system'"
-          >(<i>{{ $colorMode.value }}</i> mode detected)</span
-        >
-      </ColorScheme>
       <footer class="text-gray-700 body-font">
         <div
           class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col"
