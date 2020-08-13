@@ -29,12 +29,6 @@
       :broadcastertype="twitchUser.data.data[0].broadcaster_type"
     />
   </div>
-  <div
-    v-else
-    class="m-10 max-w-md mx-auto g-white shadow-lg rounded-lg overflow-hidden"
-  >
-    <h1>Hello World</h1>
-  </div>
 </template>
 <script>
 import StreamerInfomation from '~/components/StreamerInfomation.vue'
