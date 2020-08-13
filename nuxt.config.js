@@ -9,7 +9,6 @@ export default {
    ** See https://nuxtjs.org/api/configuration-target
    */
   target: 'static',
-
   /*
    ** Headers of the page
    */
@@ -47,17 +46,6 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
-  ],
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    // Doc: https://pwa.nuxtjs.org/
-    '@nuxtjs/pwa',
-    // Doc: https://auth.nuxtjs.org/
-    '@nuxtjs/auth',
     // Doc: https://github.com/nuxt-community/fontawesome-module
     [
       '@nuxtjs/fontawesome',
@@ -78,13 +66,24 @@ export default {
       },
     ],
   ],
-
+  /*
+   ** Nuxt.js modules
+   */
+  modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+    // Doc: https://pwa.nuxtjs.org/
+    '@nuxtjs/pwa',
+    // Doc: https://auth.nuxtjs.org/
+    '@nuxtjs/auth',
+    // Doc: https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv',
+  ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
-
   /*
    ** Auth optains
    */
@@ -114,7 +113,7 @@ export default {
     tokenRequired: true,
     tokenType: 'Bearer',
   },
-  publicRuntimeConfig: {
+  env: {
     TWITCH_CLIENT_ID: process.env.TWITCH_CLIENT_ID,
     TWITCH_REDIRECT_URI: process.env.TWITCH_REDIRECT_URI,
   },
