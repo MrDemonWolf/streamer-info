@@ -89,6 +89,11 @@
             >this site is not affiliated with twitch™ or any of it's partners.
           </span>
         </div>
+        <li
+          v-for="color of colors"
+          :key="color"
+          @click="$colorMode.preference = color"
+        ></li>
         <ColorScheme placeholder="..." tag="span">
           Color mode: <b>{{ $colorMode.preference }}</b>
         </ColorScheme>
