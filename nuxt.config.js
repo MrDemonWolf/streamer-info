@@ -1,17 +1,28 @@
 export default {
+  /*
+   ** Nuxt rendering mode
+   ** See https://nuxtjs.org/api/configuration-mode
+   */
   mode: 'spa',
+  /*
+   ** Nuxt target
+   ** See https://nuxtjs.org/api/configuration-target
+   */
+  target: 'static',
+
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Streamer Information',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
+        content:
+          'Basic NuxtJS App which allows users to get more information about them and others as well. All using the Twitch API.',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -43,24 +54,27 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    // Doc: https://pwa.nuxtjs.org/
     '@nuxtjs/pwa',
+    // Doc: https://auth.nuxtjs.org/
     '@nuxtjs/auth',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
+    // Doc: https://github.com/nuxt-community/fontawesome-module
     [
-      'nuxt-fontawesome',
+      '@nuxtjs/fontawesome',
       {
         component: 'fa',
-        imports: [
-          {
-            set: '@fortawesome/free-solid-svg-icons',
-            icons: ['faLock', 'faHeart', 'faEye', 'faEnvelope', 'faIdCard'],
-          },
-          {
-            set: '@fortawesome/free-brands-svg-icons',
-            icons: ['faTwitch'],
-          },
-        ],
+        icons: {
+          regular: ['faSun', 'faMoon'],
+          solid: [
+            'faCaretDown',
+            'faLock',
+            'faHeart',
+            'faEye',
+            'faEnvelope',
+            'faIdCard',
+          ],
+          brands: ['faTwitch'],
+        },
       },
     ],
   ],
@@ -100,19 +114,12 @@ export default {
     tokenRequired: true,
     tokenType: 'Bearer',
   },
-
-  env: {
+  publicRuntimeConfig: {
     TWITCH_CLIENT_ID: process.env.TWITCH_CLIENT_ID,
     TWITCH_REDIRECT_URI: process.env.TWITCH_REDIRECT_URI,
   },
-
   /*
    ** Build configuration
    */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {},
-  },
+  build: {},
 }
