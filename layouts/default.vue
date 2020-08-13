@@ -89,6 +89,9 @@
             >this site is not affiliated with twitch™ or any of it's partners.
           </span>
         </div>
+        <ColorScheme placeholder="..." tag="span">
+          Color mode: <b>{{ $colorMode.preference }}</b>
+        </ColorScheme>
       </footer>
     </body>
   </div>
