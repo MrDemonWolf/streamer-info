@@ -8,7 +8,7 @@ export default {
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
-  target: 'server',
+  target: 'static',
   /*
    ** Headers of the page
    */
@@ -80,6 +80,7 @@ export default {
     '@nuxtjs/auth',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    '@nuxtjs/svg',
   ],
   /*
    ** Axios module configuration
@@ -123,4 +124,7 @@ export default {
    ** Build configuration
    */
   build: {},
+  purgeCSS: {
+    whitelist: ['dark-mode'],
+  },
 }
