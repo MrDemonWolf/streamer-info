@@ -7,7 +7,9 @@
         <div
           class="justify-between flex w-auto border-b-0 pl-6 pr-2 border-solid border-gray-300 mb-2 lg:mb-0"
         >
-          <div class="flex items-center flex-shrink-0 text-gray-800 mr-16">
+          <div
+            class="flex items-center flex-shrink-0 text-gray-800 mr-16 dark:text-white"
+          >
             <Logo width="40" height="40" />
             <span class="font-semibold text-xl tracking-tight display-inline"
               >Streamer Information</span
