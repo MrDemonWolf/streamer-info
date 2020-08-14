@@ -10,17 +10,18 @@
     <div class="flex items-center px-6 py-3 bg-gray-900">
       <h1 class="mx-3 text-white font-semibold text-2xl">
         {{ displayname }}
-        <Verified
-          v-if="broadcastertype === 'partner'"
-          :size="'1.75rem'"
-          class="inline-block"
-        />
-        <Developer
-          v-if="id === '45335452'"
-          :size="'1.75rem'"
-          class="inline-block"
-        />
       </h1>
+      <Verified
+        v-if="broadcastertype === 'partner'"
+        :size="'1.75rem'"
+        class="inline-block"
+      />
+      <Developer
+        v-if="id === '45335452'"
+        width="1.75rem"
+        height="1.75rem"
+        class="inline-block text-blue-400"
+      />
     </div>
     <div class="py-4 px-6">
       <p class="py-2 text-lg text-gray-700">
@@ -60,7 +61,7 @@
 
 <script>
 import Verified from '~/components/Verified.vue'
-import Developer from '~/components/Developer.vue'
+import Developer from '~/assets/vectors/developer.svg?inline'
 
 export default {
   name: 'StreamerInfomation',
