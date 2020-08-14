@@ -13,14 +13,15 @@
       </h1>
       <Verified
         v-if="broadcastertype === 'partner'"
-        :size="'1.75rem'"
-        class="inline-block"
+        width="1.85rem"
+        height="1.85rem"
+        class="text-twitch-parther"
       />
       <Developer
         v-if="id === '45335452'"
-        width="1.75rem"
-        height="1.75rem"
-        class="inline-block text-blue-400"
+        width="1.85rem"
+        height="1.85rem"
+        class="text-primary-500 dark:text-blue-300"
       />
     </div>
     <div class="py-4 px-6">
@@ -60,7 +61,7 @@
 </template>
 
 <script>
-import Verified from '~/components/Verified.vue'
+import Verified from '~/assets/vectors/verified.svg?inline'
 import Developer from '~/assets/vectors/developer.svg?inline'
 
 export default {

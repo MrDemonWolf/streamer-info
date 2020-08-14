@@ -13,7 +13,7 @@
   <div v-else>
     <template>
       <div
-        class="py-64"
+        class="py-48 md:py-64"
         style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);"
       >
         <div class="container mx-auto px-6">

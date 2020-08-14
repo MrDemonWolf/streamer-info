@@ -29,7 +29,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#303059' },
   /*
    ** Global CSS
    */
@@ -57,7 +57,7 @@ export default {
           regular: ['faSun', 'faMoon'],
           solid: [
             'faCaretDown',
-            'faLock',
+            'faUnlock',
             'faHeart',
             'faEye',
             'faEnvelope',
@@ -124,7 +124,4 @@ export default {
    ** Build configuration
    */
   build: {},
-  purgeCSS: {
-    whitelist: ['dark-mode'],
-  },
 }
