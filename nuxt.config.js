@@ -124,4 +124,11 @@ export default {
    ** Build configuration
    */
   build: {},
+
+  /**
+   * purgeCSS configuration
+   */
+  purgeCSS: {
+    whitelist: ['dark-mode'],
+  },
 }
