@@ -1,5 +1,5 @@
 <template>
-  <footer class="text-gray-700 body-font">
+  <footer class="text-gray-700 body-font dark:text-white">
     <div
       class="container px-5 py-5 mx-auto flex items-center sm:flex-row flex-col"
     >
@@ -7,7 +7,7 @@
         © {{ copyrightYear }}
         <a
           href="https://www.mrdemonwolf.me"
-          class="text-gray-600 ml-1"
+          class="text-gray-600 ml-1 dark:text-secondary-200"
           rel="noopener noreferrer"
           target="_blank"
           >MrDemonWolf</a

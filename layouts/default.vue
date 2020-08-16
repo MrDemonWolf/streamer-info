@@ -1,6 +1,6 @@
 <template>
   <div>
-    <body class="flex flex-col min-h-screen">
+    <body class="flex flex-col min-h-screen bg-white dark:bg-gray-900">
       <header id="header" class="bg-white dark:bg-gray-800">
         <Navigation />
       </header>
