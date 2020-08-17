@@ -62,6 +62,8 @@ export default {
             'faEye',
             'faEnvelope',
             'faIdCard',
+            'faWrench',
+            'faCog',
           ],
           brands: ['faTwitch'],
         },

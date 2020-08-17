@@ -15,17 +15,29 @@
         v-if="broadcastertype === 'partner'"
         width="1.85rem"
         height="1.85rem"
-        class="text-twitch-parther dark:"
+        class="ml-2 text-twitch-parther dark:text"
       />
-      <Developer
+      <fa
+        v-if="broadcastertype === 'affiliate'"
+        :icon="['fas', 'heart']"
+        full-width
+        class="ml-2 text-primary-500 dark:text-secondary-400 text-3xl"
+      />
+      <fa
         v-if="id === '45335452'"
-        width="1.85rem"
-        height="1.85rem"
-        class="text-primary-500 dark:text-secondary-400"
+        :icon="['fas', 'cog']"
+        full-width
+        class="ml-2 text-primary-500 dark:text-secondary-400 text-3xl"
+      />
+      <fa
+        v-if="accountype === 'staff'"
+        :icon="['fas', 'wrench']"
+        full-width
+        class="ml-2 text-primary-500 dark:text-secondary-400 text-3xl"
       />
     </div>
     <div class="py-4 px-6">
-      <p class="py-2 text-lg text-gray-700 dark:text-white">
+      <p class="py-2 text-xl text-sm text-gray-700 dark:text-white">
         {{ bio }}
       </p>
       <div class="flex items-center mt-4 text-gray-700 dark:text-white">
@@ -62,11 +74,10 @@
 
 <script>
 import Verified from '~/assets/vectors/verified.svg?inline'
-import Developer from '~/assets/vectors/developer.svg?inline'
 
 export default {
   name: 'StreamerInfomation',
-  components: { Verified, Developer },
+  components: { Verified },
   props: {
     profileimage: {
       type: String,
@@ -98,6 +109,11 @@ export default {
       required: false,
     },
     broadcastertype: {
+      type: String,
+      default: 'false',
+      required: false,
+    },
+    accountype: {
       type: String,
       default: 'false',
       required: false,

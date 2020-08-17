@@ -18,7 +18,13 @@
         v-if="$auth.user.data[0].id === '45335452'"
         width="1.4rem"
         height="1.4rem"
-        class="inline-block ml-2 text-primary-500 dark:text-secondary-300"
+        class=""
+      />
+      <fa
+        v-if="$auth.user.data[0].id === '45335452'"
+        :icon="['fas', 'cog']"
+        full-width
+        class="inline-block ml-2 text-primary-500 dark:text-secondary-300 text-2xl"
       />
     </button>
     <div
@@ -68,12 +74,10 @@
 <script>
 import ClickOutside from 'vue-click-outside'
 import Verified from '~/assets/vectors/verified.svg?inline'
-import Developer from '~/assets/vectors/developer.svg?inline'
 
 export default {
   components: {
     Verified,
-    Developer,
   },
   directives: {
     ClickOutside,

@@ -8,6 +8,8 @@
       :followercount="twitchFollowers.data.total"
       :viewcount="$auth.user.data[0].view_count"
       :email="$auth.user.data[0].email"
+      :broadcastertype="$auth.user.data[0].broadcaster_type"
+      :accountype="$auth.user.data[0].type"
     />
   </div>
   <div v-else>
