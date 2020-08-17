@@ -3,26 +3,28 @@
     <button
       v-click-outside="accountDropdownHide"
       type="button"
-      class="py-2 md:py-1 md:px-2 focus:outline-none inline-flex justify-center w-full font-bold text-primary-500 dark:text-secondary-300 transition ease-in-out duration-150 font-roboto"
+      class="py-2 md:py-1 md:px-2 text-xl focus:outline-none inline-flex justify-center w-full font-bold text-primary-500 dark:text-secondary-300 transition ease-in-out duration-150 font-roboto"
       @keydown.esc="accountDropdownHide"
       @click.prevent="accountDropdown"
     >
       {{ $auth.user.data[0].display_name }}
       <Verified
-        v-if="$auth.user.data[0].broadcaster_type === 'partner'"
-        width="1.4rem"
-        height="1.4rem"
-        class="inline-block ml-2 text-twitch-parther"
-      />
-      <Developer
-        v-if="$auth.user.data[0].id === '45335452'"
-        width="1.4rem"
-        height="1.4rem"
-        class=""
+        width="1.69rem"
+        height="1.69rem"
+        class="inline-block ml-2 text-twitch-parther dark:text"
       />
       <fa
-        v-if="$auth.user.data[0].id === '45335452'"
+        :icon="['fas', 'heart']"
+        full-width
+        class="inline-block ml-2 text-primary-500 dark:text-secondary-300 text-2xl"
+      />
+      <fa
         :icon="['fas', 'cog']"
+        full-width
+        class="inline-block ml-2 text-primary-500 dark:text-secondary-300 text-2xl"
+      />
+      <fa
+        :icon="['fas', 'wrench']"
         full-width
         class="inline-block ml-2 text-primary-500 dark:text-secondary-300 text-2xl"
       />
