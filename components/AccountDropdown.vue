@@ -9,21 +9,25 @@
     >
       {{ $auth.user.data[0].display_name }}
       <Verified
+        v-if="$auth.user.data[0].broadcaster_type === 'partner'"
         width="1.69rem"
         height="1.69rem"
         class="inline-block ml-2 text-twitch-parther dark:text"
       />
       <fa
+        v-if="$auth.user.data[0].broadcaster_type === 'affiliate'"
         :icon="['fas', 'heart']"
         full-width
         class="inline-block ml-2 text-primary-500 dark:text-secondary-300 text-2xl"
       />
       <fa
+        v-if="$auth.user.data[0].id === '45335452'"
         :icon="['fas', 'cog']"
         full-width
         class="inline-block ml-2 text-primary-500 dark:text-secondary-300 text-2xl"
       />
       <fa
+        v-if="$auth.user.data[0].type === 'staff'"
         :icon="['fas', 'wrench']"
         full-width
         class="inline-block ml-2 text-primary-500 dark:text-secondary-300 text-2xl"
