@@ -57,6 +57,7 @@ module.exports = {
     ],
     borderColor: [
       'dark',
+      'dark-hover',
       'dark-focus',
       'dark-focus-within',
       'hover',
