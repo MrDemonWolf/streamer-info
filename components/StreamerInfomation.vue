@@ -8,7 +8,7 @@
       alt="avatar"
     />
     <div class="flex items-center px-6 py-3 bg-gray-100 dark:bg-gray-600">
-      <h1 class="mx-3 text-primary-500 dark:text-white font-semibold text-2xl">
+      <h1 class="text-primary-500 dark:text-white font-semibold text-2xl">
         {{ displayname }}
       </h1>
       <fa
