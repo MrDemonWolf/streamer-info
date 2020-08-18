@@ -31,13 +31,16 @@
       :accountype="twitchUser.data.data[0].type"
     />
   </div>
+  <NotSignedInJumbotron v-else />
 </template>
 <script>
 import StreamerInfomation from '~/components/StreamerInfomation.vue'
+import NotSignedInJumbotron from '~/components/NotSignedInJumbotron.vue'
 
 export default {
   components: {
     StreamerInfomation,
+    NotSignedInJumbotron,
   },
   async asyncData({ params, error, $axios, $auth, store }) {
     if ($auth.loggedIn) {
