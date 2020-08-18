@@ -11,28 +11,32 @@
       <h1 class="mx-3 text-primary-500 dark:text-white font-semibold text-2xl">
         {{ displayname }}
       </h1>
-      <Verified
-        v-if="broadcastertype === 'partner'"
-        width="1.85rem"
-        height="1.85rem"
-        class="ml-2 text-twitch-parther dark:text"
-      />
-      <fa
-        v-if="broadcastertype === 'affiliate'"
-        :icon="['fas', 'heart']"
-        full-width
-        class="ml-2 text-primary-500 dark:text-secondary-400 text-3xl"
-      />
       <fa
         v-if="id === '45335452'"
         :icon="['fas', 'cog']"
         full-width
+        title="Streamer Info Developer"
         class="ml-2 text-primary-500 dark:text-secondary-400 text-3xl"
       />
       <fa
         v-if="accountype === 'staff'"
         :icon="['fas', 'wrench']"
         full-width
+        title="Twitch Staff"
+        class="ml-2 text-primary-500 dark:text-secondary-400 text-3xl"
+      />
+      <Verified
+        v-if="broadcastertype === 'partner'"
+        width="1.85rem"
+        height="1.85rem"
+        title="Verified Partner"
+        class="ml-2 text-twitch-parther dark:text"
+      />
+      <fa
+        v-if="broadcastertype === 'affiliate'"
+        :icon="['fas', 'heart']"
+        full-width
+        title="Affiliate"
         class="ml-2 text-primary-500 dark:text-secondary-400 text-3xl"
       />
     </div>
