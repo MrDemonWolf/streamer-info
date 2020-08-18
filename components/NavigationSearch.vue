@@ -30,9 +30,6 @@
 
 <script>
 export default {
-  serach() {
-    return this.$store.state.serach.value
-  },
   methods: {
     search(e) {
       this.$router.push(`/user/${e.target.value}`)
