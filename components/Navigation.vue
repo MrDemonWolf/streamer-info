@@ -30,40 +30,24 @@
       <ul v-if="!$auth.loggedIn" class="list-reset md:flex justify-end">
         <li>
           <a
-            class="inline-block hover:bg-white hover:text-black bg-purple-700 text-white font-bold py-2 px-4 shadow-lg uppercase tracking-wider md:py-1 md:px-2 font-roboto"
+            class="cursor-pointer inline-block py-2 px-4 border-2 border-transparent uppercase tracking-widest font-roboto font-bold bg-twitch-primary text-white hover:bg-white hover:text-black hover:border-black hover:border-2 dark:bg-gray-800 dark:text-white dark:border-white dark:border-2 dark-hover:bg-twitch-primary dark-hover:text-white dark-hover:border-white"
             @click.prevent="loginWithTwitch"
           >
-            Login With Twitch <fa :icon="['fab', 'twitch']" />
+            Login With Twitch <fa :icon="['fab', 'twitch']" class="fa-1x" />
           </a>
         </li>
       </ul>
-      <div
+      <NavigationThemeSwitcher
         v-if="!$auth.loggedIn"
         class="relative inline-block text-left md:block"
-      >
-        <button
-          class="py-2 md:py-1 md:px-2 focus:outline-none"
-          aria-label="Color Mode"
-          @click="
-            $colorMode.value === 'dark'
-              ? ($colorMode.preference = 'light')
-              : ($colorMode.preference = 'dark')
-          "
-        >
-          <fa
-            v-if="$colorMode.value === 'light'"
-            :icon="['far', 'sun']"
-            class="text-black"
-          />
-          <fa v-else :icon="['fas', 'moon']" class="text-white" />
-        </button>
-      </div>
+      />
       <NavigationSearch v-if="$auth.loggedIn" class="flex" />
       <AccountDropdown />
     </div>
   </nav>
 </template>
 <script>
+import NavigationThemeSwitcher from '~/components/NavigationThemeSwitcher.vue'
 import NavigationSearch from '~/components/NavigationSearch.vue'
 import AccountDropdown from '~/components/AccountDropdown.vue'
 import Logo from '~/assets/vectors/logo.svg?inline'
@@ -72,6 +56,7 @@ export default {
   components: {
     Logo,
     NavigationSearch,
+    NavigationThemeSwitcher,
     AccountDropdown,
   },
   data() {
