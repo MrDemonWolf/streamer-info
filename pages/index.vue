@@ -8,12 +8,14 @@
       :followercount="twitchFollowers.data.total"
       :viewcount="$auth.user.data[0].view_count"
       :email="$auth.user.data[0].email"
+      :broadcastertype="$auth.user.data[0].broadcaster_type"
+      :accountype="$auth.user.data[0].type"
     />
   </div>
   <div v-else>
     <template>
       <div
-        class="py-64"
+        class="py-48 md:py-64"
         style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);"
       >
         <div class="container mx-auto px-6">

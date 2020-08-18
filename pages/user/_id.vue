@@ -15,6 +15,7 @@
       :viewcount="$auth.user.data[0].view_count"
       :email="$auth.user.data[0].email"
       :broadcastertype="$auth.user.data[0].broadcaster_type"
+      :accountype="$auth.user.data[0].type"
     />
   </div>
   <div v-else-if="$auth.loggedIn">
@@ -27,13 +28,8 @@
       :viewcount="twitchUser.data.data[0].view_count"
       :email="'false'"
       :broadcastertype="twitchUser.data.data[0].broadcaster_type"
+      :accountype="twitchUser.data.data[0].type"
     />
-  </div>
-  <div
-    v-else
-    class="m-10 max-w-md mx-auto g-white shadow-lg rounded-lg overflow-hidden"
-  >
-    <h1>Hello World</h1>
   </div>
 </template>
 <script>
