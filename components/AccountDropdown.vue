@@ -38,11 +38,11 @@
       />
     </button>
     <div
-      class="origin-top-left md:origin-top-right absolute left-0 md:right-0 mt-5 w-30 md:w-50"
+      class="origin-top-left md:origin-top-right absolute left-0 md:right-0 w-30 md:w-50"
       :class="accountNavActive ? 'block' : 'hidden'"
     >
       <div
-        class="bg-white dark:bg-gray-800 shadow-xs"
+        class="bg-white dark:bg-gray-800 rounded border-gray-500 border-2 border border-opacity-25"
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="options-menu"
