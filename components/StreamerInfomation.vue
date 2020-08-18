@@ -41,10 +41,13 @@
       />
     </div>
     <div class="py-4 px-6">
-      <p class="py-2 text-xl text-sm text-gray-700 dark:text-white">
+      <p v-if="bio" class="py-2 text-xl text-sm text-gray-700 dark:text-white">
         {{ bio }}
       </p>
-      <div class="flex items-center mt-4 text-gray-700 dark:text-white">
+      <div
+        :class="{ bio: 'mt-4 ' }"
+        class="flex items-center text-gray-700 dark:text-white"
+      >
         <fa :icon="['fas', 'heart']" />
         <h1 class="px-2 text-sm">
           {{ followercount }}
