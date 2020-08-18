@@ -45,7 +45,7 @@
         {{ bio }}
       </p>
       <div
-        :class="{ bio: 'mt-4 ' }"
+        :class="{ 'mt-4': bio }"
         class="flex items-center text-gray-700 dark:text-white"
       >
         <fa :icon="['fas', 'heart']" />
