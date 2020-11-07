@@ -21,7 +21,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Basic NuxtJS App which allows users to get more information about them and others as well. All using the Twitch API.',
+          'Simple App which allows users to get more information about them and others as well. All using the Twitch API.',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
